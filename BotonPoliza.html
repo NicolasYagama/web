@@ -1,0 +1,46 @@
+
+
+<p>Estimado integrante o socio de Periferia It Group:<br><br></p>Por medio del presente nos permitimos recordarle las pólizas próximas a vencer relacionadas 
+en el archivo adjunto, por favor proceder con la renovación de dichas pólizas.
+    <br>Quedamos atentos a sus importantes comentarios.<br><br> Cordialmente,
+    <br><br>Esta es una automatización realizada por HADA.
+    </p>
+    <br>
+    <p>A continuación seleccione una opción que desee realizar:</p>
+    <br><br>
+        <!--<a href="https://apps.powerapps.com/play/e/default-e1bdfea1-5fcd-44c1-8196-dfa7afddd8c5/a/da0570c0-73db-4142-85f4-3c6622e795e5?tenantId=e1bdfea1-5fcd-44c1-8196-dfa7afddd8c5&sourcetime=1724771972678" target="_blank">
+            <img src="https://github.com/NicolasYagama/PowerAutomate/blob/main/Renovar.png?raw=true" alt="Boton Renovar Poliza">
+        </a>
+    -->
+        <a href="https://nicolasyagama.github.io/web/" target="_blank" onclick="ejecutarFlujo()">
+            <img src="https://github.com/NicolasYagama/PowerAutomate/blob/main/no%20renovar.png?raw=true" alt="Boton No Renovar">   
+        </a>
+    </p>
+    <script>
+        function ejecutarFlujo() {
+            const url = "https://prod-162.westus.logic.azure.com:443/workflows/dd385dd1fd45483faa3b54aa6b939fb3/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ggwr6OQMKJmQz3Mzbpfi1uD_cAMYuI3hCJNatp2E_wU"; 
+            const data = [{"parametro1": "231032", "param2": "321092"}]
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(
+                    data
+                    )
+        })
+            .then(response => {
+                if (response.ok) {
+                    //  alert('Flujo ejecutado con éxito.');
+                } else {
+                    alert('Error al ejecutar el flujo.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un problema al ejecutar el flujo.');
+            });
+        }
+    </script>
+
+
